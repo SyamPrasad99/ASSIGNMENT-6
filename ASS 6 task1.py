@@ -1,0 +1,23 @@
+import json
+class employee:
+    def __init__(self):
+      self.employee={}
+      self.employee_id=len(self.employee)+1
+    def add_employee_information(self):
+      self.name=input("Enter the name of employee=")
+      self.dob=input("Enter the date of birth of employee=")
+      self.height=float(input("Enter the height of employee="))
+      self.city=input("Enter the city of employee=")
+      self.state=input("Enter the state of employee=")
+      self.id={"name":self.name,"date of birth":self.dob,"height":self.height,"city":self.city,"state":self.state}
+      self.employee_id=len(self.employee)+1
+      self.employee[self.employee_id]=self.id
+      with open("employee_information.json","w")as f:
+          json.dump(self.employee,f)
+      print("information added successfully")
+x=employee()        
+x.add_employee_information()
+x.add_employee_information()
+x.add_employee_information()
+x.add_employee_information()
+x.add_employee_information()
